@@ -1,0 +1,31 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: clientes-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bancadb
+    username: devsu
+    password: devsu123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: clientes
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+rabbitmq:
+  exchange: clientes.exchange
+  routing-key:
+    created: cliente.created
+    updated: cliente.updated
+    deleted: cliente.deleted

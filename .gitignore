@@ -1,0 +1,12 @@
+target/
+*.class
+*.jar
+*.war
+*.log
+.mvn/
+!**/src/main/**/target/
+!**/src/test/**/target/
+.idea/
+*.iml
+.vscode/
+.DS_Store

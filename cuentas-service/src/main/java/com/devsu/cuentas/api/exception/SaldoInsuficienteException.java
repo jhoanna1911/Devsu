@@ -1,0 +1,7 @@
+package com.devsu.cuentas.api.exception;
+
+public class SaldoInsuficienteException extends RuntimeException {
+    public SaldoInsuficienteException() {
+        super("Saldo no disponible");
+    }
+}

@@ -1,0 +1,29 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: cuentas-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bancadb
+    username: devsu
+    password: devsu123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: cuentas
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+rabbitmq:
+  exchange: clientes.exchange
+  queue: clientes.queue
+  routing-key: cliente.#
